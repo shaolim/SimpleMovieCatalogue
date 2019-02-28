@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">SimpleMovieCatalogue</string>
+
+    <!-- Navigation -->
+    <string name="movies">Movies</string>
+    <string name="tv_shows">TV Shows</string>
+    <string name="settings">Settings</string>
+
+    <!-- Tab -->
+    <string name="now_playing">Now Playing</string>
+    <string name="upcoming">Upcoming</string>
+
+    <!-- Settings -->
+    <string name="option">OPTION</string>
+    <string name="language">Language</string>
+    <string name="bahasa">Bahasa Indonesia</string>
+    <string name="english">English</string>
+
+    <!-- Dialog -->
+    <string name="confirmation">Confirmation</string>
+    <string name="message_language_description">Are you sure you want to change the language to %s?</string>
+    <string name="button_yes">Yes</string>
+    <string name="button_no">No</string>
+
+    <!-- Content Description -->
+    <string name="poster">Poster</string>
+
+    <!-- Other -->
+    <string name="title">Title</string>
+    <string name="overview">Overview</string>
+    <string name="genre">Genre</string>
+    <string name="rating">Rating</string>
+    <string name="release_date">Release Date</string>
+    <string name="favorite">Favorite</string>
+    <string name="dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
 </resources>

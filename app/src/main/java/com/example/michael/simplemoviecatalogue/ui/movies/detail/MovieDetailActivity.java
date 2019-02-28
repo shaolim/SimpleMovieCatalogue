@@ -1,4 +1,4 @@
-package com.example.michael.simplemoviecatalogue.moviesdetail;
+package com.example.michael.simplemoviecatalogue.ui.moviesdetail;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

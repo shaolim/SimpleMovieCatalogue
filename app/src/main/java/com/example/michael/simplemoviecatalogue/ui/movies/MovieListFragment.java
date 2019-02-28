@@ -1,8 +1,12 @@
-package com.example.michael.simplemoviecatalogue.movies;
+package com.example.michael.simplemoviecatalogue.ui.movies;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,33 +17,50 @@ import com.example.michael.simplemoviecatalogue.util.GenreUtil;
 
 import java.util.ArrayList;
 
-public class MoviesActivity extends AppCompatActivity implements MovieView {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    private MovieAdapter adapter;
-    private ListView listView;
-    private MoviesPresenter moviesPresenter;
+public class MovieNowPlayingFragment extends Fragment implements MovieNowPlayingContract.View {
+
     private ProgressDialog progressDoalog;
+    private MovieAdapter adapter;
+    private MovieNowPlayingPresenter presenter;
+
+    @BindView(R.id.lv_list) ListView listView;
+
+    public MovieNowPlayingFragment() {
+        // Required empty public constructor
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movies);
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-        progressDoalog = new ProgressDialog(MoviesActivity.this);
+        progressDoalog = new ProgressDialog(getContext());
         progressDoalog.setMessage("Loading....");
         progressDoalog.show();
 
-        adapter = new MovieAdapter(this, new ArrayList<>());
+        adapter = new MovieAdapter(getContext(), new ArrayList<>());
 
-        listView = findViewById(R.id.lv_list);
         listView.setAdapter(adapter);
 
-        moviesPresenter = new MoviesPresenter(this);
-        moviesPresenter.getMovies(1);
+        presenter = new MovieNowPlayingPresenter(this);
+        presenter.getMovies(1);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_movie_now_playing, container, false);
+        ButterKnife.bind(this, view);
+
+        return view;
     }
 
     @Override
     public void onFetchDataSuccess(MoviesResponse response) {
+
         progressDoalog.dismiss();
 
         ArrayList<MovieIndex> movieIndices = new ArrayList<>();
@@ -74,6 +95,6 @@ public class MoviesActivity extends AppCompatActivity implements MovieView {
     public void onFetchDataFailure() {
         progressDoalog.dismiss();
 
-        Toast.makeText(this, "Something wrong!!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Something wrong!!!", Toast.LENGTH_SHORT).show();
     }
 }

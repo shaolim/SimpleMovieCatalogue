@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settingstext">
+        <item>@string/option</item>
+        <item>@string/language</item>
+    </string-array>
+
+    <string-array name="settingsicon">
+        <item>@null</item>
+        <item>@drawable/ic_language_black</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>@string/english</item>
+        <item>@string/bahasa</item>
+    </string-array>
+</resources>

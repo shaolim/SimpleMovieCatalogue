@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SimpleMovieCatalogue</string>
+
+    <!-- Navigation -->
+    <string name="movies">Film</string>
+    <string name="tv_shows">Acara TV</string>
+    <string name="settings">Pengaturan</string>
+
+    <!-- Tab -->
+    <string name="now_playing">Sedang Tayang</string>
+    <string name="upcoming">Akan Datang</string>
+
+    <!-- Settings -->
+    <string name="option">PILIHAN</string>
+    <string name="language">Bahasa</string>
+    <string name="bahasa">Bahasa Indonesia</string>
+    <string name="english">English</string>
+    
+    <!-- Dialog -->
+    <string name="confirmation">Komfirmasi</string>
+    <string name="message_language_description">Anda yakin ingin mengganti aturan bahasa menjadi %s?</string>
+    <string name="button_yes">Ya</string>
+    <string name="button_no">Tidak</string>
+
+    <!-- Content Description -->
+    <string name="poster">Poster</string>
+
+    <!-- Other -->
+    <string name="title">Judul</string>
+    <string name="overview">Synopsis</string>
+    <string name="genre">Genre</string>
+    <string name="rating">Rating</string>
+    <string name="release_date">Tanggal Rilis</string>
+    <string name="favorite">Favorite</string>
+    <string name="dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+</resources>
